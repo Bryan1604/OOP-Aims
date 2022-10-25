@@ -28,8 +28,7 @@ public class Calculate {
             System.out.println("Division of 2 numbers: " + qout);
         } else {
             System.out.println("Division of 2 numbers: cannot define");
-
         }
-
+        System.exit(0);
     }
 }
