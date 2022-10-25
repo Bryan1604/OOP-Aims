@@ -15,10 +15,18 @@ public class Calculate {
         double num2 = Double.parseDouble(strNum2);
 
         sum = num1 + num2;
+        System.out.println("Sum of 2 numbers: " + sum);
         diff = num1 - num2;
+        System.out.println("Diffirence of 2 numbers: " + diff);
         prod = num1 * num2;
+        System.out.println("Product of 2 numbers: " + prod);
+        if (num2 != 0) {
+            qout = num1 / num2;
+            System.out.println("Division of 2 numbers: " + qout);
+        } else {
+            System.out.println("Division of 2 numbers: cannot define");
 
-        System.out.println(sum, diff, prod);
+        }
 
     }
 }
