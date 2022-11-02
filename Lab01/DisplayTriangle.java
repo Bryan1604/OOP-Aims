@@ -7,19 +7,18 @@ import java.util.Scanner;
 public class DisplayTriangle {
     public static void main(String[] args) {
         Scanner height = new Scanner(System.in);
-        int n, k = 0;
-        // String strN = JOptionPane.showInputDialog(null, "Enter the height of stars(*)
-        // n: ");
-        // int n = Integer.parseInt(strN);
+
         System.out.println("Enter the hight of paramater: ");
-        n = height.nextInt();
-        for (int i = 1; i <= n; ++i, k = 0) {
-            for (int j = 1; j <= n - i; ++j) {
-                System.out.print(" ");
-            }
-            while (k != 2 * i - 1) {
-                System.out.print("* ");
-                ++k;
+
+        int n = height.nextInt();
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= 2 * n - 1; j++) {
+                if (j >= n - i + 1 && j <= n + i - 1) {
+                    System.out.print("*"); // in ra man hinh vi tri khong co dau *
+                } else {
+                    System.out.print(" ");
+                }
             }
             System.out.println();
         }
