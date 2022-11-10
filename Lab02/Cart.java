@@ -1,38 +1,53 @@
 
 public class Cart {
-    private int qtyOrdered = 0;
-    private float totalCost;
-    public static final int MAX_NUMBERS_ORDERED = 20;
+    private int qtyOrdered = 0 ; // khai bao thuoc tinh dung de chua so luong DVD trong gio hang
+    private float totalCost; // khai bao thuoc tinh de chua tong so tien cua gio hang
+    private boolean status; // thuoc tinh status kiem tra xem cart da duoc thanh toan hay chua
+    public static final int MAX_NUMBERS_ORDERED = 20; // khai bao so luong DVD toi da co trong gio hang
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
-    public int getQtyOrdered() { // lar ra tong so luong dia trong gio hang
+    public int getQtyOrdered() { // lay ra tong so luong dia trong gio hang
         return qtyOrdered;
     }
 
-    public void addDVD(DigitalVideoDisc DVD) { // them dia vao gio hang // kiem tra so luong dia duoc them
-        if (this.qtyOrdered <= 20) {
+    public boolean getStatus() {
+        return status;
+    }
+
+    public void addDVD(DigitalVideoDisc DVD) { // them dvd vao gio hang => kiem tra so luong dia duoc them . neu da du
+                                               // thi in ra thong bao cho nguoi dung
+        if (this.qtyOrdered <= 20) { // neu
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
+        } else {
+            System.out.println("the Cart was full. Please remove some one if you really want to add other the one!");
         }
     }
 
     /*
-     * public void removeDigitalVideoDisc(DigitalVideoDisc DVD) { // xoa mat hang ra
-     * khoi gio hang
-     * try {
+     * public void removeDigitalVideoDisc(DigitalVideoDisc DVD) { //remove 1 dvd
      * 
-     * } catch (Exception e) {
-     * // TODO: handle exception
+     * 
+     * for (int i = 0; i < this.qtyOrdered; i++) {
+     * if (this.itemsOrdered[i].getTitle().equals(DVD.getTitle())) {
+     * 
+     * 
      * }
      * }
-     * 
+     * }
      */
-
-    public float cost() {
+    public float getTotalCost() { // phuong thuc tinh tong so tien cua tat ca dvd co trong gio hang
         for (int i = 0; i < this.qtyOrdered; i++) {
             this.totalCost += itemsOrdered[i].getCost();
         }
         return this.totalCost;
+    }
+
+    public void getInformationOfListDVD(){  // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
+        for (int i = 0; i < this.qtyOrdered; i++) {
+            this.itemsOrdered[i].getInformationDetail();
+            System.out.println("");
+        }
     }
 
 }

@@ -1,28 +1,37 @@
 
 public class Aim {
     public static void main(String[] args) {
-        Cart anOrder = new Cart();
-        DigitalVideoDisc dvd1 = new DigitalVideoDisc("English", "Language", "John", 3, 8.12);
+        Cart anOrder = new Cart(); // create a new card
+
+        // create new dvd and add them to the cart
+        DigitalVideoDisc dvd1 = new DigitalVideoDisc("English", "Language", "John", 3, 8.12f);
         anOrder.addDVD(dvd1);
-        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Japanese", "Language", "Katazurashi", 4, 4.12);
+        DigitalVideoDisc dvd2 = new DigitalVideoDisc("Japanese", "Language", "Katazurashi", 4, 4.12f);
         anOrder.addDVD(dvd2);
-        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Chinese", "Language", "Xin Chao", 6, 5.12);
+        DigitalVideoDisc dvd3 = new DigitalVideoDisc("Chinese", "Language", "Xin Chao", 6, 5.12f);
         anOrder.addDVD(dvd3);
-        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Vietnamese", "Language", "Chien Nguyen00", 1, 4);
+        DigitalVideoDisc dvd4 = new DigitalVideoDisc("Vietnamese", "Language", "Chien Nguyen00", 1, 4f);
         anOrder.addDVD(dvd4);
-        DigitalVideoDisc dvd5 = new DigitalVideoDisc("Math", "Subject", "Kara", 6, 3.52);
+        DigitalVideoDisc dvd5 = new DigitalVideoDisc("Math", "Subject", "Kara", 6, 3.52f);
         anOrder.addDVD(dvd5);
-        DigitalVideoDisc dvd6 = new DigitalVideoDisc("Physic", "Natural", "Johnk", 3, 4.76);
+        DigitalVideoDisc dvd6 = new DigitalVideoDisc("Physic", "Natural", "Johnk", 3, 4.76f);
         anOrder.addDVD(dvd6);
-        DigitalVideoDisc dvd7 = new DigitalVideoDisc("Color", "Art", "Sam", 13, 3.33);
+        DigitalVideoDisc dvd7 = new DigitalVideoDisc("Color", "Art", "Sam", 13, 3.33f);
         anOrder.addDVD(dvd7);
-        DigitalVideoDisc dvd8 = new DigitalVideoDisc("Singer", "Unknow", "John", 8, 3.82);
+        DigitalVideoDisc dvd8 = new DigitalVideoDisc("Singer", "Unknow", "John", 8, 3.82f);
         anOrder.addDVD(dvd8);
 
         // print total cost of the items in the cart
-        System.out.println("Total cost llis: ");
-        System.out.println(anOrder.cost());
+        System.out.println("Total cost is: ");
+        System.out.println(anOrder.getTotalCost());
+
+        // print the dvd's quantity in the cart
+        System.out.println("the number of DVD int the Cart is: ");
         System.out.println(anOrder.getQtyOrdered());
+
+        // print the detail information of all dvd in the cart
+        System.out.println("Title  Category    Diretor    Length   Cost" + "\t");
+        anOrder.getInformationOfListDVD();
 
     }
 }
