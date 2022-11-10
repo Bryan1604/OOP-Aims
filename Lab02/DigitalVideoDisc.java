@@ -1,20 +1,24 @@
-class DigitalVideoDisc{
+public class DigitalVideoDisc{
     private String title;
     private String category;
     private String director;
     private int lenght;
-    private double cost;
+    private float cost;
 
-    public void DigitalVideoDisc(){
-
+    public void DigitalVideoDisc(String title, String category, String director, int lenght, float cost){
+        this.title = title;
+        this.category = category;
+        this.director = director;
+        this.lenght = lenght;
+        this.cost = cost;
     }
     public String getTitle(){
-        return this.title;
-    }
+        return title;
+    }     // lay ra ten dvd
 
     public String getCategory() {
-        return this.category;
-    }
+        return category;
+    }  // lay ra kho luu tru dvd
 
     public String getDirector() {
         return this.director;
