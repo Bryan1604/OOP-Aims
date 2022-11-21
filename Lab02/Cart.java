@@ -1,4 +1,4 @@
-
+import java.lang.Object;
 public class Cart {
     private int qtyOrdered = 0; // khai bao thuoc tinh dung de chua so luong DVD trong gio hang
     private float totalCost; // khai bao thuoc tinh de chua tong so tien cua gio hang
@@ -24,6 +24,7 @@ public class Cart {
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
         } else {
+
             System.out.println("the Cart was full. Please remove some one if you really want to add other the one!");
         }
     }
@@ -55,10 +56,11 @@ public class Cart {
     }
 
     public void removeDVD(String title) {
-        for (int i = 0; i < qtyOrdered; i++) {
-            if (itemsOrdered[i].getTitle().equals(title)) {
-                itemsOrdered[i] = null;
-                qtyOrdered -= 1;
+        for (int i = 0; i < this.qtyOrdered; i++) {
+            if (this.itemsOrdered[i].getTitle().equals(title)) {
+                this.itemsOrdered[i]=null;
+                this.qtyOrdered -= 1;
+                break;
             }
         }
 

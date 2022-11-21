@@ -1,0 +1,13 @@
+include :   Use-Case A ------(include) ----> Use_Case B   : trong qua trinh thuc thi A thi phai luon thuc thi B
+extend  :   Use-Case A <-----(extend)----- Use-Case B  : trong qua trinh thuc thi A , trong 1 so truong hop se thuc thi B
+
+
+Lap 2:
+A sample class diagram is illustrated in Figure 2, which includes 3 classes:
+
+· The Aims class which provides a main() method which interacts with the rest of the system
+     -> cung cap ham main() de tuong tac voi phan con lai cua he thong
+· The DigitalVideoDisc class which stores the title, category, cost, director and length
+     => luu tru thong tin cua dvd nhu  title, category, cost, director ....
+· The Cart class to maintain an array of these DigitalVideoDisc objects
+     => maintain ( duy tri, bao duong) mang chua cac object DVD
