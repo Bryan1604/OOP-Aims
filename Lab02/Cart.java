@@ -1,10 +1,14 @@
 
 public class Cart {
-    private int qtyOrdered = 0 ; // khai bao thuoc tinh dung de chua so luong DVD trong gio hang
+    private int qtyOrdered = 0; // khai bao thuoc tinh dung de chua so luong DVD trong gio hang
     private float totalCost; // khai bao thuoc tinh de chua tong so tien cua gio hang
     private boolean status; // thuoc tinh status kiem tra xem cart da duoc thanh toan hay chua
     public static final int MAX_NUMBERS_ORDERED = 20; // khai bao so luong DVD toi da co trong gio hang
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
+
+    public Cart() {
+        super();
+    }
 
     public int getQtyOrdered() { // lay ra tong so luong dia trong gio hang
         return qtyOrdered;
@@ -43,11 +47,21 @@ public class Cart {
         return this.totalCost;
     }
 
-    public void getInformationOfListDVD(){  // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
+    public void getInformationOfListDVD() { // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
         for (int i = 0; i < this.qtyOrdered; i++) {
             this.itemsOrdered[i].getInformationDetail();
             System.out.println("");
         }
+    }
+
+    public void removeDVD(String title) {
+        for (int i = 0; i < qtyOrdered; i++) {
+            if (itemsOrdered[i].getTitle().equals(title)) {
+                itemsOrdered[i] = null;
+                qtyOrdered -= 1;
+            }
+        }
+
     }
 
 }

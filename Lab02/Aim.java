@@ -1,7 +1,8 @@
+import java.util.Scanner;
 
 public class Aim {
     public static void main(String[] args) {
-        Cart anOrder = new Cart(); // create a new card
+        final Cart anOrder = new Cart(); // create a new card
 
         // create new dvd and add them to the cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("English", "Language", "John", 3, 8.12f);
@@ -32,6 +33,16 @@ public class Aim {
         // print the detail information of all dvd in the cart
         System.out.println("Title  Category    Diretor    Length   Cost" + "\t");
         anOrder.getInformationOfListDVD();
+
+        // remove the DVD from Cart
+        Scanner input_remove = new Scanner(System.in); // create an object input from keyboard
+        System.out.println("Enter the title of DVD you want to remove from Cart: ");
+        String title_remove = input_remove.nextLine(); // declare a string to store the input title of DVD from keyboard
+        anOrder.removeDVD(title_remove); // call method removeDVD to remove the DVD from the Cart
+        System.out.println("Title  Category    Diretor    Length   Cost" + "\t"); // print information after remove one
+                                                                                  // Dvd
+        anOrder.getInformationOfListDVD();
+        input_remove.close(); // close the object
 
     }
 }
