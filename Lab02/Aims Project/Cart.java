@@ -24,8 +24,23 @@ public class Cart {
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
         } else {
-
             System.out.println("the Cart was full. Please remove some one if you really want to add other the one!");
+        }
+    }
+
+    public void addDVD(DigitalVideoDisc[] DVDList){
+         for(int j = 0;j<DVDList.length;j++){
+                 this.addDVD(DVDList[j]);
+         }
+    }
+
+    public void addDVD(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
+        if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED) {
+            this.addDVD(dvd1);
+            this.addDVD(dvd2);
+        }else if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED-1){
+            this.addDVD(dvd1);
+            System.out.println("the number of DVD is already over .Only add %s into the cart");
         }
     }
 
@@ -49,18 +64,18 @@ public class Cart {
     }
 
     public void getInformationOfListDVD() { // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
-        for (int i = 0; i < this.qtyOrdered; i++) {
+        for (int i = 0; i < qtyOrdered; i++) {
             this.itemsOrdered[i].getInformationDetail();
+            System.out.printf(" %d",i);
             System.out.println("");
         }
     }
 
     public void removeDVD(String title) {
         for (int i = 0; i < this.qtyOrdered; i++) {
-            if (this.itemsOrdered[i].getTitle().equals(title)) {
-                this.itemsOrdered[i]=null;
-                this.qtyOrdered -= 1;
-                break;
+            if (itemsOrdered[i].getTitle().equals(title)) {
+                itemsOrdered[i]= itemsOrdered[i+1];
+                qtyOrdered --;
             }
         }
 

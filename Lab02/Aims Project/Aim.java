@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Aim {
+class Aim {
     public static void main(String[] args) {
         final Cart anOrder = new Cart(); // create a new card
 
@@ -34,6 +34,7 @@ public class Aim {
         System.out.println("Title  Category    Diretor    Length   Cost" + "\t");
         anOrder.getInformationOfListDVD();
 
+         /*
         // remove the DVD from Cart
         Scanner input_remove = new Scanner(System.in); // create an object input from keyboard
         System.out.println("Enter the title of DVD you want to remove from Cart: ");
@@ -43,6 +44,15 @@ public class Aim {
                                                                                   // Dvd
         anOrder.getInformationOfListDVD();
         input_remove.close(); // close the object
+         */
+
+        System.out.println("list dvd after add:");
+        DigitalVideoDisc dvd9 = new DigitalVideoDisc("Singer1", "Unknow", "John", 8, 3.92f);
+        DigitalVideoDisc dvd10 = new DigitalVideoDisc("Singer2", "Unknow", "John", 8, 3.2f);
+        DigitalVideoDisc dvd11 = new DigitalVideoDisc("Singer3", "Unknow", "John", 8, 3.32f);
+        DigitalVideoDisc DVDlist[] = {dvd9,dvd10,dvd11};
+        anOrder.addDVD(DVDlist);
+        anOrder.getInformationOfListDVD();
 
     }
 }
