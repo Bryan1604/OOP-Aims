@@ -47,14 +47,15 @@ class Aim {
          */
 
         System.out.println("list dvd after add:");
-        DigitalVideoDisc dvd9 = new DigitalVideoDisc("Singer1", "Unknow", "John", 8, 3.92f);
-        DigitalVideoDisc dvd10 = new DigitalVideoDisc("Singer2", "Unknow", "John", 8, 3.2f);
-        DigitalVideoDisc dvd11 = new DigitalVideoDisc("Singer3", "Unknow", "John", 8, 3.32f);
-        DigitalVideoDisc DVDlist[] = {dvd9,dvd10,dvd11};
-        anOrder.addDVD(DVDlist);
+        DigitalVideoDisc dvd9 = new DigitalVideoDisc("Singer1", "Unknow", "John", 8, 3.92f);  // tạo mới 1 object
+        DigitalVideoDisc dvd10 = new DigitalVideoDisc("Singer2", "Unknow", "John", 8, 3.2f);   //tạo mới 1 object
+        DigitalVideoDisc dvd11 = new DigitalVideoDisc("Singer3", "Unknow", "John", 8, 3.32f);  //tạo mới 1 object
 
-        anOrder.addDVD(dvd10, dvd11);
-        anOrder.getInformationOfListDVD();
+        DigitalVideoDisc DVDlist[] = {dvd9,dvd10,dvd11};  // tạo mới 1 mảng object
+
+        anOrder.addDVD(DVDlist);                          // gọi phương thức addDVD với param truyền vào là 1 mảng
+        anOrder.addDVD(dvd10, dvd11);                     // gọi phương thức addDVD với param truyền vào là 2 object
+        anOrder.getInformationOfListDVD();                // in ra thông tin list DVD có trong Cart
 
     }
 }

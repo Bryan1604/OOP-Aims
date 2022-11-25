@@ -20,7 +20,7 @@ public class Cart {
 
     public void addDVD(DigitalVideoDisc DVD) { // them dvd vao gio hang => kiem tra so luong dia duoc them . neu da du
                                                // thi in ra thong bao cho nguoi dung
-        if (this.qtyOrdered <= 20) { // neu
+        if (this.qtyOrdered <= 20) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong Cart không
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
         } else {
@@ -28,21 +28,27 @@ public class Cart {
         }
     }
 
-    public void addDVD(DigitalVideoDisc[] DVDList){
-         for(int j = 0;j<DVDList.length;j++){
-                 this.addDVD(DVDList[j]);
+    // tạo method mới để thêm list các DVD vào trong Cart
+    public void addDVD(DigitalVideoDisc[] DVDList){   // nạp chồng phương thức addDVD bằng cách thêm param là mảng vào phương thức
+         for(int j = 0;j<DVDList.length;j++){         // vòng lặp
+                 this.addDVD(DVDList[j]);             // thêm từng DVD trong list vào trong Cart. sử dụng lại method addDVD()
          }
     }
 
-    public void addDVD(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){
-        if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED) {
+    // tạo method mới để thêm 2 dvd các DVD vào trong Cart
+    public void addDVD(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2){  // nạp chồng phương thức addDVD bằng cách thêm params là 2 object
+        if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED) {   // kiểm tra điều kiên. nếu đủ chỗ thì add cả 2 DVD vào Cart
+            this.addDVD(dvd1);                           // thêm DVD1 vào Cart  . sử dụng lại method addDVD với param là một object
+            this.addDVD(dvd2);                           // thêm DVD2 vào Cart  . sử dụng lại method addDVD với param là một object
+        }else if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED-1){ // kiểm tra điều kiện . nếu chỉ còn thừa một chỗ trống thì chỉ thêm DVD1
             this.addDVD(dvd1);
-            this.addDVD(dvd2);
-        }else if((this.qtyOrdered+2)<=MAX_NUMBERS_ORDERED-1){
-            this.addDVD(dvd1);
-            System.out.println("the number of DVD is already over .Only add %s into the cart");
+            System.out.printf("the number of DVD is already over .Only add %s into the cart",dvd1.getTitle());
+        }
+        else{                                             // Cart đã đây => không thêm vào nữa
+            System.out.println("the Cart has been full.");
         }
     }
+
 
     /*
      * public void removeDigitalVideoDisc(DigitalVideoDisc DVD) { //remove 1 dvd
@@ -65,8 +71,8 @@ public class Cart {
 
     public void getInformationOfListDVD() { // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
         for (int i = 0; i < qtyOrdered; i++) {
+            System.out.printf(" %d: ",i);
             this.itemsOrdered[i].getInformationDetail();
-            System.out.printf(" %d",i);
             System.out.println("");
         }
     }
