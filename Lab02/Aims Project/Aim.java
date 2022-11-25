@@ -52,6 +52,8 @@ class Aim {
         DigitalVideoDisc dvd11 = new DigitalVideoDisc("Singer3", "Unknow", "John", 8, 3.32f);
         DigitalVideoDisc DVDlist[] = {dvd9,dvd10,dvd11};
         anOrder.addDVD(DVDlist);
+
+        anOrder.addDVD(dvd10, dvd11);
         anOrder.getInformationOfListDVD();
 
     }
