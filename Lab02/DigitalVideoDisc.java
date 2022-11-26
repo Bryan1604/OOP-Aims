@@ -1,17 +1,20 @@
 import java.lang.String;
 
 public class DigitalVideoDisc {
-    private String title;
-    private String category;
-    private String director;
-    private int length;
-    private float cost;
+    private String title;  // khởi tạo thuộc tính title kiểu String
+    private String category; // khởi tạo thuộc tính category kiểu String
+    private String director; // khời tạo thuộc tính director kiểu String
+    private int length;  // khỏi tạo thuộc tinhs length kiểu int
+    private float cost; // khởi tạo thuộc tính cost kiểu float
+    private static int nbDigitalVideoDiscs = 0; // khởi tạo class attribute nbDigitalVideoDiscs kiểu int ( lưu ý: giá trị này thuộc kiểu increment cho mỗi đối tượng)
+
+    private int id;  // khời tạo instance attribute
 
     /**
      * @param title
      * @param category
      * @param director
-     * @param lenght
+     * @param length
      * @param cost
      */
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) { // khai bao mot
@@ -23,8 +26,14 @@ public class DigitalVideoDisc {
         this.director = director;
         this.length = length;
         this.cost = cost;
+        nbDigitalVideoDiscs++;      // update giá trị của nbDigitalVideoDiscs của class
+        this.id= nbDigitalVideoDiscs;
     }
 
+
+    public int getId(){
+        return id;
+    }
     public String getTitle() { // phuong thuc lay ra ten dvd
         return title;
     } // phuong thuc lay ra tilte cua dvd
@@ -52,7 +61,7 @@ public class DigitalVideoDisc {
      * }
      */
     public void getInformationDetail() { // phuong thuc lay ra tat ca thong tin cua 1 dvd
-        System.out.print(this.getTitle() + "," +
+        System.out.print(this.id+ ": " + this.getTitle() + "," +
                 this.getCategory() + "," +
                 this.getDirector() + "," +
                 Integer.toString(this.getLength()) + " minuties ," +

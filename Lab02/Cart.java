@@ -24,7 +24,6 @@ public class Cart {
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
         } else {
-
             System.out.println("the Cart was full. Please remove some one if you really want to add other the one!");
         }
     }
