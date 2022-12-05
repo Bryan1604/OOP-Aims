@@ -14,6 +14,8 @@ public class DigitalVideoDisc {
      * @param length
      * @param cost
      */
+    public DigitalVideoDisc(){
+    }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) { // khai bao mot
                                                                                                       // contructor cua
                                                                                                       // class
@@ -59,4 +61,13 @@ public class DigitalVideoDisc {
                 Float.toString(this.getCost()) + "$ ");
     }
 
+    // cài đặt method setting title
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    // tạo một contructor với tham số truyền vào là string title
+    public DigitalVideoDisc(String title){
+        this.title = title;
+    }
 }
