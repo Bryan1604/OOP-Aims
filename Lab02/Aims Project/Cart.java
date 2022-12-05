@@ -91,4 +91,26 @@ public class Cart {
         }
     }
 
+    // xay dung method search theo id
+    public void searchById(int id){
+        for(int i ==0; i< qtyOrdered;++i){    // dung vong lap for de duyet het tat ca
+            if(itemsOrdered[i].getId() == id){  // so sanh co trung nhau khong
+                itemsOrdered[i].getInformationDetail();// phuong thuc lay ra tat ca thong tin cua 1 dvd duoc tim thay
+            }
+            else {
+                System.out.println("Khong co dvd nao duoc tim thay");
+            }
+        }
+    }
+
+    //xay dung method search theo title
+    public void searchByTitle(String titlte){
+        for (int i = 0 i< this.qtyOrdered;i++){       // dung vong lap for de duyet tat ca cac phan tu
+            if(this.itemsOrdered[i].isMatch(title))   // so sanh co thoa man dieu kien hay khong
+                itemsOrdered[i].getInformationDetail();  // in ra man hinh neu tim duoc
+            else{
+                System.out.println("There is no dvd you want ot file");
+            }
+        }
+    }
 }
