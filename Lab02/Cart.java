@@ -49,6 +49,8 @@ public class Cart {
     }
 
     public void getInformationOfListDVD() { // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
+        System.out.println("*****************CART********************");
+        System.out.println("Order items:");
         for (int i = 0; i < this.qtyOrdered; i++) {
             this.itemsOrdered[i].getInformationDetail();
             System.out.println("");
@@ -63,7 +65,8 @@ public class Cart {
                 break;
             }
         }
-
     }
+
+
 
 }

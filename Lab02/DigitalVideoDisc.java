@@ -11,7 +11,7 @@ public class DigitalVideoDisc {
      * @param title
      * @param category
      * @param director
-     * @param lenght
+     * @param length
      * @param cost
      */
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) { // khai bao mot
