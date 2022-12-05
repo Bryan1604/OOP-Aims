@@ -76,7 +76,7 @@ public class Cart {
         System.out.println("*****************CART********************");
         System.out.println("Order items:");
         for (int i = 0; i < qtyOrdered; i++) {
-            System.out.printf(" %d: ",i);
+            System.out.printf(" %d: ",this.itemsOrdered[i].getId());
             this.itemsOrdered[i].getInformationDetail();
             System.out.println("");
         }
@@ -90,4 +90,5 @@ public class Cart {
             }
         }
     }
+
 }
