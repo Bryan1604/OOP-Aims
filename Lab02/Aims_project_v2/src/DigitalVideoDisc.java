@@ -20,9 +20,9 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(){
     }
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) { // khai bao mot
-        // contructor cua
-        // class
-        // DigitalVideoDisc
+                                                                                                      // contructor cua
+                                                                                                      // class
+                                                                                                      // DigitalVideoDisc
         this.title = title;
         this.category = category;
         this.director = director;

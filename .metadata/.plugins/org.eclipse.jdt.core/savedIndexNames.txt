@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+D:\OOP\oolt.vn.20221.20205099.luongvd\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index

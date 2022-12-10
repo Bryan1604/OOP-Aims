@@ -10,9 +10,9 @@ public class Cart {
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
 
     public Cart() {
-
+        
     }
-
+     
 
     public int getQtyOrdered() { // lay ra tong so luong dia trong gio hang
         return qtyOrdered;
@@ -23,7 +23,7 @@ public class Cart {
     }
 
     public void addDVD(DigitalVideoDisc DVD) { // them dvd vao gio hang => kiem tra so luong dia duoc them . neu da du
-        // thi in ra thong bao cho nguoi dung
+                                               // thi in ra thong bao cho nguoi dung
         if (this.qtyOrdered <= 20) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong Cart không
             this.itemsOrdered[this.qtyOrdered] = DVD;
             this.qtyOrdered++;
@@ -34,9 +34,9 @@ public class Cart {
 
     // tạo method mới để thêm list các DVD vào trong Cart
     public void addDVD(DigitalVideoDisc[] DVDList){   // nạp chồng phương thức addDVD bằng cách thêm param là mảng vào phương thức
-        for(int j = 0;j<DVDList.length;j++){         // vòng lặp
-            this.addDVD(DVDList[j]);             // thêm từng DVD trong list vào trong Cart. sử dụng lại method addDVD()
-        }
+         for(int j = 0;j<DVDList.length;j++){         // vòng lặp
+                 this.addDVD(DVDList[j]);             // thêm từng DVD trong list vào trong Cart. sử dụng lại method addDVD()
+         }
     }
 
     // tạo method mới để thêm 2 dvd các DVD vào trong Cart
@@ -56,12 +56,12 @@ public class Cart {
 
     /*
      * public void removeDigitalVideoDisc(DigitalVideoDisc DVD) { //remove 1 dvd
-     *
-     *
+     * 
+     * 
      * for (int i = 0; i < this.qtyOrdered; i++) {
      * if (this.itemsOrdered[i].getTitle().equals(DVD.getTitle())) {
-     *
-     *
+     * 
+     * 
      * }
      * }
      * }
