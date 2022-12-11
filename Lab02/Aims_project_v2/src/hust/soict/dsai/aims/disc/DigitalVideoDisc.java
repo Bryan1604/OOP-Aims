@@ -1,3 +1,5 @@
+package hust.soict.dsai.aims.disc;
+
 import java.lang.String;
 
 public class DigitalVideoDisc {
@@ -22,7 +24,7 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(String title, String category, String director, int length, float cost) { // khai bao mot
                                                                                                       // contructor cua
                                                                                                       // class
-                                                                                                      // DigitalVideoDisc
+                                                                                                      // hust.soict.dsai.aims.disc.DigitalVideoDisc
         this.title = title;
         this.category = category;
         this.director = director;
@@ -57,7 +59,7 @@ public class DigitalVideoDisc {
     } // phuong thuc lay ra cost cua dvd
 
     /*
-     * public DigitalVideoDisc(String title) {
+     * public hust.soict.dsai.aims.disc.DigitalVideoDisc(String title) {
      * super();
      * this.title = title;
      * }

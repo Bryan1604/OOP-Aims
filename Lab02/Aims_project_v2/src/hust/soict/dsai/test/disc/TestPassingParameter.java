@@ -1,3 +1,7 @@
+package hust.soict.dsai.test.disc;
+
+import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+
 public class TestPassingParameter {
     public static void main(String[] args){
         //Todo auto-generated method stub
@@ -5,13 +9,13 @@ public class TestPassingParameter {
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella"); // tạo mới một DVD tên là Cinderella
 
         /* hướng làm swap 2 đối tượng Jungle và Cinderella
-        *    1) tạo một class phụ có tên là Swapper và có 1 addtribute kiểu DigitalVideoDisc
-        *    2) Tạo 2 Object Swapper có chứa addtribute có giá trị là jungleDVD và cinderellaDVD
+        *    1) tạo một class phụ có tên là hust.soict.dsai.test.disc.Swapper và có 1 addtribute kiểu hust.soict.dsai.aims.disc.DigitalVideoDisc
+        *    2) Tạo 2 Object hust.soict.dsai.test.disc.Swapper có chứa addtribute có giá trị là jungleDVD và cinderellaDVD
         *    3) sau đó swap 2 adtribute của 2 object với nhau => ta swap được 2 object jungle và Cinderella
         */
         Swapper swap1 = new Swapper(jungleDVD);
         Swapper swap2 = new Swapper(cinderellaDVD);
-        swap(swap1,swap2);  // gọi hàm swap để hoán đổi addtribute của 2 object Swapper
+        swap(swap1,swap2);  // gọi hàm swap để hoán đổi addtribute của 2 object hust.soict.dsai.test.disc.Swapper
 
         System.out.println("Jungle dvd title: " + swap1.DVD.getTitle());   // in ra title mơi của dvd jungle
         System.out.println("Cinderella dvd title: " + swap2.DVD.getTitle());  // in ra title mới của dvd cinderella
