@@ -1,6 +1,5 @@
 package hust.soict.dsai.aims.cart;
-import hust.soict.dsai.aims.disc.*;
-import java.lang.Object;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 //import static com.intellij.icons.AllIcons.Nodes.Project;
 
@@ -57,7 +56,7 @@ public class Cart {
 
 
     /*
-     * public void removeDigitalVideoDisc(hust.soict.dsai.aims.disc.DigitalVideoDisc DVD) { //remove 1 dvd
+     * public void removeDigitalVideoDisc(hust.soict.dsai.aims.media.DigitalVideoDisc DVD) { //remove 1 dvd
      * 
      * 
      * for (int i = 0; i < this.qtyOrdered; i++) {

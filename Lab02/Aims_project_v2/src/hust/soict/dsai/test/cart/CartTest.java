@@ -1,7 +1,7 @@
 package hust.soict.dsai.test.cart;
 
 import hust.soict.dsai.aims.cart.Cart;
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 import java.util.Scanner;  // khai bao pagekage chua lop Scanner
 public class CartTest {

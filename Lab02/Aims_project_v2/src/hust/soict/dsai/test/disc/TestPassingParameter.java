@@ -1,6 +1,6 @@
 package hust.soict.dsai.test.disc;
 
-import hust.soict.dsai.aims.disc.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.DigitalVideoDisc;
 
 public class TestPassingParameter {
     public static void main(String[] args){
@@ -9,7 +9,7 @@ public class TestPassingParameter {
         DigitalVideoDisc cinderellaDVD = new DigitalVideoDisc("Cinderella"); // tạo mới một DVD tên là Cinderella
 
         /* hướng làm swap 2 đối tượng Jungle và Cinderella
-        *    1) tạo một class phụ có tên là hust.soict.dsai.test.disc.Swapper và có 1 addtribute kiểu hust.soict.dsai.aims.disc.DigitalVideoDisc
+        *    1) tạo một class phụ có tên là hust.soict.dsai.test.disc.Swapper và có 1 addtribute kiểu hust.soict.dsai.aims.media.DigitalVideoDisc
         *    2) Tạo 2 Object hust.soict.dsai.test.disc.Swapper có chứa addtribute có giá trị là jungleDVD và cinderellaDVD
         *    3) sau đó swap 2 adtribute của 2 object với nhau => ta swap được 2 object jungle và Cinderella
         */
