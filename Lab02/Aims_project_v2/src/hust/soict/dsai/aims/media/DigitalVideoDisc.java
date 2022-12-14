@@ -2,9 +2,7 @@ package hust.soict.dsai.aims.media;
 
 import java.lang.String;
 
-public class DigitalVideoDisc extends Disc {
-    //private String director; // khời tạo thuộc tính director kiểu String
-    //private int length;  // khỏi tạo thuộc tinhs length kiểu int
+public class DigitalVideoDisc extends Disc implements Playable {
     private static int nbDigitalVideoDiscs = 0; // khởi tạo class attribute nbDigitalVideoDiscs kiểu int ( lưu ý: giá trị này thuộc kiểu increment cho mỗi đối tượng)
 
     public DigitalVideoDisc(int id,String title, String category, String director, int length, float cost) {
@@ -13,15 +11,10 @@ public class DigitalVideoDisc extends Disc {
         //this.length = length;
     }
 
-    /*
-    public int getLength() { // phuong thuc lay ra do dai cua dvd
-        return length;
-    } // phuong thuc lay ra length cua dvd
-
-    public String getDirector() { // phuong thuc lay ra tac gia cua dvd
-        return director;
-    } // phuong thuc lay ra director cua dvd
-    */
+    public void play(){
+        System.out.println("Playing DVD: " + this.getTitle());
+        System.out.println("DVD length: " + this.getLength());
+    }
 
     public void getInformationDetail() { // phuong thuc lay ra tat ca thong tin cua 1 dvd
         System.out.print(this.getId()+ ": " + this.getTitle() + "," +
