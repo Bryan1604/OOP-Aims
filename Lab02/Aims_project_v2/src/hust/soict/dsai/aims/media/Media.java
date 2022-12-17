@@ -18,10 +18,6 @@ public abstract class Media {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getTitle() {
         return title;
     }
@@ -44,5 +40,9 @@ public abstract class Media {
 
     public void setCost(float cost) {
         this.cost = cost;
+    }
+
+    public String toString(){
+        return this.getId()+" "+ this.getTitle()+" "+this.getCategory()+" " + this.getCost();
     }
 }

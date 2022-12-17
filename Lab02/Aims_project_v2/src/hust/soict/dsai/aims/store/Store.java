@@ -1,26 +1,31 @@
 package hust.soict.dsai.aims.store;
 
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
 
 import java.util.ArrayList;
 
 public class Store{
-    private ArrayList<DigitalVideoDisc> itemsInStore = new ArrayList<DigitalVideoDisc>();  // khoi tao attribute la 1 mang
+    private ArrayList<Media> itemsInStore = new ArrayList<Media>();  // khoi tao attribute la 1 mang
 
-    // khoi tao method de them DVD Vao hust.soict.dsai.aims.store.Store
-    public void addDVD(DigitalVideoDisc... dvdList){
-        for(DigitalVideoDisc dvd : dvdList)
-             itemsInStore.add(dvd) ;
+    // khoi tao method de them media Vao Store
+    public void addMedia(Media... mediaList){
+        for(Media media : mediaList)
+             itemsInStore.add(media) ;
     }
-    // khỏi tạo method đẻ xóa DVD, param truyền vào là một object
-    public void removeDVD(DigitalVideoDisc DVD) {
-        itemsInStore.remove(DVD);
+    // khỏi tạo method đẻ xóa media, param truyền vào là một object
+    public void removeMedia(Media media) {
+        if(itemsInStore.contains(media)){
+            itemsInStore.remove(media);
+            System.out.println("the media" + media.getTitle()+ " has been removed from the Store");
+        }else{
+            System.out.println("The media" + media.getTitle() + " hasn't been in the Store");
+        }
     }
 
     public void printStore(){
-        for(DigitalVideoDisc dvd : itemsInStore) {
-            dvd.getInformationDetail();
-            System.out.println(" ");
+        for(Media media : itemsInStore) {
+            System.out.println(media.toString());
         }
     }
 }

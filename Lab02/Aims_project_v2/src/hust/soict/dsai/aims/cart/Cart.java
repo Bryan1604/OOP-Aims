@@ -1,38 +1,57 @@
 package hust.soict.dsai.aims.cart;
 import hust.soict.dsai.aims.media.DigitalVideoDisc;
+import hust.soict.dsai.aims.media.Media;
+
+import java.util.ArrayList;
 
 //import static com.intellij.icons.AllIcons.Nodes.Project;
 
 public class Cart {
-    private int qtyOrdered = 0; // khai bao thuoc tinh dung de chua so luong DVD trong gio hang
     private float totalCost; // khai bao thuoc tinh de chua tong so tien cua gio hang
-    private boolean status; // thuoc tinh status kiem tra xem cart da duoc thanh toan hay chua
     public static final int MAX_NUMBERS_ORDERED = 20; // khai bao so luong DVD toi da co trong gio hang
-    private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
-
+    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
     public Cart() {
         
     }
-     
 
-    public int getQtyOrdered() { // lay ra tong so luong dia trong gio hang
-        return qtyOrdered;
+    public ArrayList<Media> getItemsOrdered(){
+        return itemsOrdered;
     }
-
-    public boolean getStatus() {
-        return status;
-    }
-
-    public void addDVD(DigitalVideoDisc DVD) { // them dvd vao gio hang => kiem tra so luong dia duoc them . neu da du
-                                               // thi in ra thong bao cho nguoi dung
-        if (this.qtyOrdered <= 20) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong hust.soict.dsai.aims.cart.Cart không
-            this.itemsOrdered[this.qtyOrdered] = DVD;
-            this.qtyOrdered++;
-        } else {
-            System.out.println("the hust.soict.dsai.aims.cart.Cart was full. Please remove some one if you really want to add other the one!");
+    public void addMedia(Media media) { // them dvd vao gio hang =>
+        if (this.itemsOrdered.size() <MAX_NUMBERS_ORDERED) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong Cart không
+            itemsOrdered.add(media);
+        } else {                                              //neu Cart da du thi in ra thong bao cho nguoi dung
+            System.out.println("the Cart has been already full. Please remove some one if you really want to add other one!");
         }
     }
 
+    public void removeMedia(Media media) { //remove 1 media
+        if (itemsOrdered.isEmpty()) {
+            System.out.println("The Cart has nothing to remove");
+        } else {
+            if (itemsOrdered.contains(media)) {
+                itemsOrdered.remove(media);
+                System.out.println("the media" + media.getTitle() + " has been already removed from the Cart");
+            } else {
+                System.out.println("The media" + media.getTitle() + " is not in the Cart");
+            }
+        }
+    }
+    public float getTotalCost() { // phuong thuc tinh tong so tien cua tat ca dvd co trong gio hang
+        int totalCost = 0;
+        for (Media media: itemsOrdered) {
+            totalCost += media.getCost();
+        }
+        return totalCost;
+    }
+    public void printInfo(){
+        for(Media media:itemsOrdered){
+            System.out.println(media.toString());
+        }
+    }
+
+
+    /*
     // tạo method mới để thêm list các DVD vào trong hust.soict.dsai.aims.cart.Cart
     public void addDVD(DigitalVideoDisc[] DVDList){   // nạp chồng phương thức addDVD bằng cách thêm param là mảng vào phương thức
          for(int j = 0;j<DVDList.length;j++){         // vòng lặp
@@ -53,27 +72,10 @@ public class Cart {
             System.out.println("the hust.soict.dsai.aims.cart.Cart has been full.");
         }
     }
+    */
 
 
     /*
-     * public void removeDigitalVideoDisc(hust.soict.dsai.aims.media.DigitalVideoDisc DVD) { //remove 1 dvd
-     * 
-     * 
-     * for (int i = 0; i < this.qtyOrdered; i++) {
-     * if (this.itemsOrdered[i].getTitle().equals(DVD.getTitle())) {
-     * 
-     * 
-     * }
-     * }
-     * }
-     */
-    public float getTotalCost() { // phuong thuc tinh tong so tien cua tat ca dvd co trong gio hang
-        for (int i = 0; i < this.qtyOrdered; i++) {
-            this.totalCost += itemsOrdered[i].getCost();
-        }
-        return this.totalCost;
-    }
-
     public void getInformationOfListDVD() { // method lay ra thong tin chi tiet cua tat ca dvd co trong cart
         System.out.println("*****************CART********************");
         System.out.println("Order items:");
@@ -91,6 +93,8 @@ public class Cart {
             }
         }
     }
+
+
 
     // xay dung method search theo id
     public void searchById(int id){
@@ -117,4 +121,5 @@ public class Cart {
                 System.out.println("There is no dvd you want ot file");
         }
     }
+    */
 }
