@@ -28,4 +28,8 @@ public class Book extends Media {
         else
             System.out.println(authorName + " hasn't present in this book");
     }
+    public String toString(){
+        return "Book: " + this.getId() + "-" + this.getTitle() + "-" +
+                this.getCategory() + "-"+this.getCost()+ "$" + "-" + "authors:" + this.authors;
+    }
 }

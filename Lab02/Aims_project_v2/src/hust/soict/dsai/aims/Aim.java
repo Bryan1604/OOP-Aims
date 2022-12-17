@@ -5,7 +5,7 @@ import hust.soict.dsai.aims.media.DigitalVideoDisc;
 class Aim {
     public static void main(String[] args) {
         final Cart anOrder = new Cart(); // create a new card
-
+        /*
         // create new dvd and add them to the cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("English", "Language", "John", 3, 8.12f);
         anOrder.addDVD(dvd1);
@@ -48,6 +48,7 @@ class Aim {
         input_remove.close(); // close the object
          */
 
+        /*
         System.out.println("list dvd after add:");
         DigitalVideoDisc dvd9 = new DigitalVideoDisc("Singer1", "Unknow", "John", 8, 3.92f);  // tạo mới 1 object
         DigitalVideoDisc dvd10 = new DigitalVideoDisc("Singer2", "Unknow", "John", 8, 3.2f);   //tạo mới 1 object
@@ -58,6 +59,6 @@ class Aim {
         anOrder.addDVD(DVDlist);                          // gọi phương thức addDVD với param truyền vào là 1 mảng
         anOrder.addDVD(dvd10, dvd11);                     // gọi phương thức addDVD với param truyền vào là 2 object
         anOrder.getInformationOfListDVD();                // in ra thông tin list DVD có trong hust.soict.dsai.aims.cart.Cart
-
+       */
     }
 }

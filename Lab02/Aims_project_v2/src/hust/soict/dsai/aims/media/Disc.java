@@ -17,4 +17,10 @@ public class Disc extends Media{
         this.length = length;
         this.director = director;
     }
+
+    public String toString(){
+        return "DVD : " +this.getId()+"-"+ this.getTitle() + "-" + this.getCategory() + "-" +
+                this.getDirector()+ "-" + this.getLength() + "-" +this.getCost() ;
+    }
+
 }

@@ -8,6 +8,7 @@ public class StoreTest {
         // creat a new hust.soict.dsai.aims.store.Store
         Store store = new Store();
 
+        /*
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("kkkkkkkk","ddfdfdfdd","rerererere",43,46.64f);
         DigitalVideoDisc dvd2 = new DigitalVideoDisc("rtrtrtr","uuuuufdfdfdd","rwewewewererere",63,89.64f);
         DigitalVideoDisc dvd3 = new DigitalVideoDisc("kkewewewew","ddrererdd","oooooerere",83,99.64f);
@@ -19,5 +20,6 @@ public class StoreTest {
         store.removeDVD(dvd2);
         System.out.println("hust.soict.dsai.aims.store.Store after:");
         store.printStore();
+        */
     }
 }

@@ -9,6 +9,7 @@ public class CartTest {
         //Create a new hust.soict.dsai.aims.cart.Cart
         Cart cart = new Cart();
 
+        /*
         // Create a new dvd object and add them to the cart
         DigitalVideoDisc dvd1 = new DigitalVideoDisc("The lion King","Animation","Roger Allll", 87, 19.95f); // tao 1 object
         cart.addDVD(dvd1);   // Truyen vao trong cART
@@ -36,5 +37,7 @@ public class CartTest {
 
         input1.close();
         input2.close(); // close the object
+        */
+
     }
 }
