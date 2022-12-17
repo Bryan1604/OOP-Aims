@@ -6,14 +6,6 @@ public abstract class Media {
     private String category;
     private float cost;
 
-    public Media(int id, String title, String category, float cost){
-        super();
-        this.id=id;
-        this.title=title;
-        this.category= category;
-        this.cost = cost;
-    }
-
     public int getId() {
         return id;
     }
@@ -42,8 +34,25 @@ public abstract class Media {
         this.cost = cost;
     }
 
+    public Media(int id, String title, String category, float cost){
+        super();
+        this.id=id;
+        this.title=title;
+        this.category= category;
+        this.cost = cost;
+    }
+
+    public boolean equals(Object obj){
+        if(obj instanceof Media){
+            Media media = (Media) obj;
+            return this.title.equals(media.title);
+        }else{
+            return false;
+        }
+    }
+
     public String toString(){
-        return this.getId()+" "+ this.getTitle()+" "+this.getCategory()+" " + this.getCost();
+        return  this.getId()+" : "+ this.getTitle()+" - "+this.getCategory()+" - " + this.getCost();
     }
 
 }
