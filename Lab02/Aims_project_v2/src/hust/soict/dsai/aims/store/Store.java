@@ -4,9 +4,9 @@ import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
 
 import java.util.ArrayList;
-
+import java.util.List;
 public class Store{
-    private ArrayList<Media> itemsInStore = new ArrayList<Media>();  // khoi tao attribute la 1 mang
+    private List<Media> itemsInStore = new ArrayList<Media>();  // khoi tao attribute la 1 mang
 
     // khoi tao method de them media Vao Store
     public void addMedia(Media... mediaList){
@@ -27,5 +27,12 @@ public class Store{
         for(Media media : itemsInStore) {
             System.out.println(media.toString());
         }
+    }
+
+    public Media searchByTitle(String title){
+        for (Media media:itemsInStore){
+            if(media.getTitle().compareTo(title)==1) return media;
+        }
+        return null;
     }
 }
