@@ -15,7 +15,8 @@ public class SwingAccumulator extends JFrame {
         cp.setLayout(new GridLayout(2,2)); // set layout of the container
 
         cp.add(new JLabel("Vu Duc Luong - Enter an Integer: ")); // add a label component
-        tfInput = new JTextField(10); // add the input textField component
+
+        tfInput = new JTextField(10); // add the JtextField component
         cp.add(tfInput);
         tfInput.addActionListener(new TFInputListener()); // listen the action
 
@@ -24,7 +25,7 @@ public class SwingAccumulator extends JFrame {
         tfOutput.setEditable(false);  // set the editable => can not edit
         cp.add(tfOutput);
 
-        setTitle("Vu Duc Luong - Swing Accumulator"); // set title
+        setTitle("Vu Duc Luong - Swing Accumulator"); // set title of JFrame
         setSize(350,120);  // set size
         setVisible(true);              // Show in screen
     }
@@ -34,8 +35,8 @@ public class SwingAccumulator extends JFrame {
 
     private class TFInputListener implements ActionListener{
         public void actionPerformed( ActionEvent evt){  // add method listener action
-            int numberIn = Integer.parseInt(tfInput.getText());
-            sum+= numberIn;
+            int numberIn = Integer.parseInt(tfInput.getText()); // get the text from input
+            sum+= numberIn;  // the sum of all input
             tfInput.setText("");
             tfOutput.setText(sum+"");
         }
