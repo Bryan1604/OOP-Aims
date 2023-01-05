@@ -13,6 +13,7 @@ public class Store{
         for(Media media : mediaList)
              itemsInStore.add(media) ;
     }
+
     // khỏi tạo method đẻ xóa media, param truyền vào là một object
     public void removeMedia(Media media) {
         if(itemsInStore.contains(media)){
@@ -27,6 +28,10 @@ public class Store{
         for(Media media : itemsInStore) {
             System.out.println(media.toString());
         }
+    }
+
+    public List<Media> getItemsInStore() {
+        return itemsInStore;
     }
 
     public Media searchByTitle(String title){

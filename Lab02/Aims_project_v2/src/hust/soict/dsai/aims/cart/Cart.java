@@ -1,20 +1,19 @@
 package hust.soict.dsai.aims.cart;
-import hust.soict.dsai.aims.media.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Media;
-
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 //import static com.intellij.icons.AllIcons.Nodes.Project;
 
 public class Cart {
     private float totalCost; // khai bao thuoc tinh de chua tong so tien cua gio hang
     public static final int MAX_NUMBERS_ORDERED = 20; // khai bao so luong DVD toi da co trong gio hang
-    private ArrayList<Media> itemsOrdered = new ArrayList<Media>();
+    private ObservableList<Media> itemsOrdered =  FXCollections.observableArrayList();
     public Cart() {
         
     }
 
-    public ArrayList<Media> getItemsOrdered(){
+    public ObservableList<Media> getItemsOrdered(){
         return itemsOrdered;
     }
     public void addMedia(Media media) { // them dvd vao gio hang =>
