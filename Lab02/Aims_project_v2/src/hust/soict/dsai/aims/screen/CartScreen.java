@@ -73,6 +73,4 @@ public class CartScreen extends JFrame {
         new CartScreen(cart);
         //launch(args);
     }
-
-
 }
