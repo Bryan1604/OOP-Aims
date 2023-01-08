@@ -16,6 +16,32 @@ public class Cart {
     public ObservableList<Media> getItemsOrdered(){
         return itemsOrdered;
     }
+    // Search by title
+    public ObservableList<Media> getItemsOrdered(String title){
+        ObservableList<Media> medias = FXCollections.observableArrayList();
+        // if title is null => return all items
+        if(title == "")
+            return itemsOrdered;
+        for(Media media: itemsOrdered){
+            if(media.getTitle().toLowerCase().contains(title.toLowerCase())){
+                medias.add(media);
+            }
+        }
+        return medias;
+    }
+
+    // Search by ID
+    public ObservableList<Media> getItemsOrdered(int id){
+        ObservableList<Media> medias = FXCollections.observableArrayList();
+        for(Media media: itemsOrdered){
+            if(media.getId()==id){
+                medias.add(media);
+            }
+        }
+        return medias;
+    }
+
+
     public void addMedia(Media media) { // them dvd vao gio hang =>
         if (this.itemsOrdered.size() <MAX_NUMBERS_ORDERED) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong Cart không
             itemsOrdered.add(media);
@@ -47,6 +73,10 @@ public class Cart {
         for(Media media:itemsOrdered){
             System.out.println(media.toString());
         }
+    }
+
+    public void setEmptyCart(){
+        this.itemsOrdered = null;
     }
 
 

@@ -8,7 +8,7 @@ import hust.soict.dsai.aims.media.Track;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
-import javafx.fxml.FXML;
+//import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -36,7 +36,7 @@ public class CartScreen extends JFrame {
             @Override
             public void run() {
                 try{
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("cart.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/cart.fxml"));
                     CartScreenController controller = new CartScreenController(cart);
                     loader.setController(controller);
                     Parent root = loader.load();
@@ -71,6 +71,5 @@ public class CartScreen extends JFrame {
         cart.addMedia(book);
 
         new CartScreen(cart);
-        //launch(args);
     }
 }
