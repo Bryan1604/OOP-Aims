@@ -1,4 +1,5 @@
 package hust.soict.dsai.aims.media;
+import hust.soict.dsai.aims.exception.PlayerException;
 
 import javax.swing.*;
 import java.lang.String;
@@ -10,17 +11,24 @@ public class DigitalVideoDisc extends Disc implements Playable {
         super(id,title,category,cost,director,length);
     }
 
-    public void play(){
-        // add dialog
-        JDialog dialog = new JDialog();
-        dialog.setSize(400,400);
+    public void play() throws PlayerException{
+        if(this.getLength()>0){
+            // add dialog
+            JDialog dialog = new JDialog();
+            dialog.setSize(400,400);
 
-        // add label
-        JLabel label = new JLabel("VDL - " + this.toString());
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        dialog.add(label);
-        dialog.setTitle("VDL - Play DVD :");
-        dialog.setVisible(true);
+            // add label
+            JLabel label = new JLabel("VDL - " + this.toString());
+            label.setHorizontalAlignment(SwingConstants.CENTER);
+            dialog.add(label);
+            dialog.setTitle("VDL - Play DVD :");
+            dialog.setVisible(true);
+        }else{
+            System.err.println("Error: DVD length is non-positive!");
+            throw new PlayerException("Error: DVD length is non-positive!");
+
+        }
+
     }
 
     public String toString() { // phuong thuc lay ra tat ca thong tin cua 1 dvd

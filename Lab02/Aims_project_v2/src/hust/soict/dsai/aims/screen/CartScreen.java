@@ -48,7 +48,7 @@ public class CartScreen extends JFrame {
         });
     }
 
-    public static void main(String[] args){
+    public static void main(String[] args) throws Exception {
         List<Track> tracks = new ArrayList<Track>();
         Track t1,t2,t3;
         t1 = new Track("Track1", 1);

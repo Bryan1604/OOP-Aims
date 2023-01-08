@@ -73,7 +73,7 @@ class Aim {
 
     //handle media detail menu
 
-    public static void handleMediaDetailMenu(Store store, Cart cart){
+    public static void handleMediaDetailMenu(Store store, Cart cart) throws Exception {
         boolean back = false;
         int option ;
         while(!back){
@@ -86,7 +86,7 @@ class Aim {
                     if(media == null){
                         System.out.println("No found");
                     }else{
-                        cart.addMedia(media);
+                            cart.addMedia(media);
                     }
                     // count the number of DVD in the current cart
                 case 2:
@@ -97,9 +97,8 @@ class Aim {
             }
         }
     }
-
     // handle store menu
-    public static void handleStoreMenu(Store store, Cart cart){
+    public static void handleStoreMenu(Store store, Cart cart) throws Exception {
         boolean back = true;
         int option;
         while (!back){
@@ -155,9 +154,6 @@ class Aim {
             }
         }
     }
-
-
-
 
     public static void main(String args[]){
         showMenu();

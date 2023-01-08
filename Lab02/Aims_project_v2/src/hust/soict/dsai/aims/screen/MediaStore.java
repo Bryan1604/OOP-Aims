@@ -1,5 +1,7 @@
 package hust.soict.dsai.aims.screen;
 
+import hust.soict.dsai.aims.cart.Cart;
+import hust.soict.dsai.aims.exception.PlayerException;
 import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 
@@ -10,7 +12,7 @@ import java.awt.event.ActionListener;
 
 public class MediaStore extends JPanel {
     private Media media;
-    public MediaStore(Media media){
+    public MediaStore(Media media, Cart cart){
         this.media = media;
         this.setLayout(new BoxLayout(this,BoxLayout.Y_AXIS));
 
@@ -24,13 +26,31 @@ public class MediaStore extends JPanel {
         JPanel container = new JPanel();
         container.setLayout(new FlowLayout(FlowLayout.CENTER));
 
-        container.add(new JButton("Add to Cart"));
+        // add to cart Button
+        JButton addToCartBtn = new JButton("Add to Cart");
+        addToCartBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                try {
+                    cart.addMedia(media);
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+                System.out.println(media.getTitle()+ " Added to Cart");
+            }
+        });
+        container.add(addToCartBtn);
+
         if(media instanceof Playable){
             JButton playAction = new JButton("Play");
             container.add(playAction);
             playAction.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent e){
-                    ((Playable) media).play();
+                    try {
+                        ((Playable) media).play();
+                    } catch (PlayerException ex) {
+                        throw new RuntimeException(ex);
+                    }
                 }
             });
         }

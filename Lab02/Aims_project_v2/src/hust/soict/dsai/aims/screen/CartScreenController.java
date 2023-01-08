@@ -5,6 +5,7 @@ import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.media.Playable;
 import javafx.beans.Observable;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ListChangeListener;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -88,6 +89,16 @@ public class CartScreenController {
 
             }
         });
+
+        //implement set total cost method
+        setTotalCost();
+        //count again the total cost
+        this.cart.getItemsOrdered().addListener(new ListChangeListener<Media>(){
+            public void onChanged(Change<? extends Media> medias){
+                setTotalCost();
+            }
+
+        });
     }
 
     void updateButtonBar(Media media){
@@ -132,5 +143,6 @@ public class CartScreenController {
     void setTotalCost(){
         totalCost.setText(this.cart.getTotalCost() + " $");
     }
+
 
 }

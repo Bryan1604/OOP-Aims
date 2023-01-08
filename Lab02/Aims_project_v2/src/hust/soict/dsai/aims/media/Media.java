@@ -46,9 +46,9 @@ public abstract class Media {
         this.cost = cost;
     }
 
-    public boolean equals(Object obj){
-        if(obj instanceof Media){
-            Media media = (Media) obj;
+    public boolean equals(Object object){
+        if(object instanceof Media){
+            Media media = (Media) object;
             return this.title.equals(media.title);
         }else{
             return false;
@@ -59,6 +59,5 @@ public abstract class Media {
         return  this.getId()+" : "+ this.getTitle()+" - "+this.getCategory()+" - " + this.getCost();
     }
 
-//    public void play() {
-//    }
+
 }

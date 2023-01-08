@@ -1,4 +1,5 @@
 package hust.soict.dsai.aims.screen;
+import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.media.*;
 import hust.soict.dsai.aims.store.Store;
 import javax.swing.*;
@@ -8,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 public class StoreScreen extends JFrame {
     private Store store;
-    public StoreScreen(Store store){
+    private Cart cart;
+    public StoreScreen(Store store, Cart cart){
         this.store = store;
+        this.cart = cart;
         Container cp = getContentPane();
         cp.setLayout(new BorderLayout());
 
@@ -78,7 +81,7 @@ public class StoreScreen extends JFrame {
         List<Media> mediaInStore = store.getItemsInStore();
 
         for(int i=0; i<mediaInStore.size();i++){
-            MediaStore cell = new MediaStore(mediaInStore.get(i));
+            MediaStore cell = new MediaStore(mediaInStore.get(i),cart);
             center.add(cell);
         }
         return center;
@@ -100,19 +103,21 @@ public class StoreScreen extends JFrame {
         CompactDisc media8 = new CompactDisc(8,"helo8","English8",12,"kkkk",12,"James",trackList) ;
         CompactDisc media9 = new CompactDisc(9,"helo9","English9",12,"kkkk",12,"James",trackList) ;
 
-        DigitalVideoDisc DVD1 = new DigitalVideoDisc(10,"DVD","Music","Art",23,45);
-        Store store1 = new Store();
-        store1.addMedia(media1);
-        store1.addMedia(media2);
-        store1.addMedia(media3);
-        store1.addMedia(media4);
-        store1.addMedia(media5);
-        store1.addMedia(media6);
-        store1.addMedia(media7);
-        store1.addMedia(media7);
-        store1.addMedia(DVD1);
+        DigitalVideoDisc DVD1 = new DigitalVideoDisc(10,"DVD","Music","Art",-2,45);
+        Store store = new Store();
+        store.addMedia(media1);
+        store.addMedia(media2);
+        store.addMedia(media3);
+        store.addMedia(media4);
+        store.addMedia(media5);
+        store.addMedia(media6);
+        store.addMedia(media7);
+        store.addMedia(media7);
+        store.addMedia(DVD1);
 
-        new StoreScreen(store1);
+        Cart cart = new Cart();
+
+        new StoreScreen(store, cart);
     }
 
 

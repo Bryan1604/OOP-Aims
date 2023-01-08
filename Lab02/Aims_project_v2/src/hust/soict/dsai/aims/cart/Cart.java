@@ -3,6 +3,8 @@ import hust.soict.dsai.aims.media.Media;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import javax.naming.LimitExceededException;
+
 //import static com.intellij.icons.AllIcons.Nodes.Project;
 
 public class Cart {
@@ -42,11 +44,11 @@ public class Cart {
     }
 
 
-    public void addMedia(Media media) { // them dvd vao gio hang =>
+    public void addMedia(Media media) throws Exception { // them dvd vao gio hang =>
         if (this.itemsOrdered.size() <MAX_NUMBERS_ORDERED) { // kiem tra xem trong cart có đủ chỗ( vượt quá số lượng cho phép) để thêm DVD mới vào trong Cart không
             itemsOrdered.add(media);
         } else {                                              //neu Cart da du thi in ra thong bao cho nguoi dung
-            System.out.println("the Cart has been already full. Please remove some one if you really want to add other one!");
+            throw new Exception("the Cart has been already full. Please remove some one if you really want to add other one!");
         }
     }
 
